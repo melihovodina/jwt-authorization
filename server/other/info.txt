@@ -1,0 +1,9 @@
+npm init -y - иницилизация проекта
+tsc --init - иницилизация ts
+npm install express - для написания кода для сервера
+npm install --save-dev @types/express - типы express
+npm install cors - отправка запросов с браузера
+npm install --save-dev @types/cors - типы cors
+npm install cookies-parser
+npm install --save-dev @types/cookie-parser - типы cookie-parser
+npm install dotenv - библиотека для хранения секретных данных
