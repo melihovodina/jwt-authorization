@@ -7,3 +7,24 @@ npm install --save-dev @types/cors - типы cors
 npm install cookies-parser
 npm install --save-dev @types/cookie-parser - типы cookie-parser
 npm install dotenv - библиотека для хранения секретных данных
+npm install mongodb
+npm install mongoose - подключение к бд
+npm install jsonwebtoken - для генерации jwt
+npm install --save-dev @types/jsonwebtoken
+npm install bcrypt - хэширование паролей
+npm install --save-dev @types/bcrypt
+npm install uuid - генерация рандомных сторк
+npm install --save-dev @types/uuid
+
+
+tsconfig.json 
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+  }
+}
