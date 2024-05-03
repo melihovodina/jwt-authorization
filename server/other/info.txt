@@ -15,6 +15,8 @@ npm install bcrypt - хэширование паролей
 npm install --save-dev @types/bcrypt
 npm install uuid - генерация рандомных сторк
 npm install --save-dev @types/uuid
+npm install nodemailer - работа с почтой
+npm install --save-dev @types/nodemailer
 
 
 tsconfig.json 

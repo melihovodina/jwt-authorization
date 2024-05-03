@@ -4,6 +4,10 @@ import { v4 as uuidv4 } from 'uuid'; // Библиотека для генера
 import mailService from "./mailService"; // Сервис для отправки электронной почты
 import tokenService from "./tokenService"; // Сервис для генерации токенов
 import UserDto from '../dtos/userDto'; // Dto пользователя
+import { config } from "dotenv"; // Библиотека для работы с переменными окружения
+config({ path: "./other/.env" }); // Загрузка переменных окружения из файла .env
+
+const SITE_URL = process.env.SITE_URL || "site url is not working";
 
 class UserService {
     // Асинхронный метод для регистрации пользователя
@@ -18,7 +22,7 @@ class UserService {
         const activationLink = uuidv4(); // Генерация уникальной ссылки активации с использованием uuid
         
         const user = await userModel.create({ email, password: hashPassword, activationLink }); // Создание нового пользователя
-        await mailService.sendActivationMail(email, activationLink); // Отправка письма с ссылкой активации на указанный email
+        await mailService.sendActivationMail(email, `${SITE_URL}/api/acitivate/${activationLink}`); // Отправка письма с ссылкой активации на указанный email
         
         const userDto = new UserDto(user) // Создание DTO пользователя
         const tokens = tokenService.generateTokens({...userDto}); // Генерация токенов для пользователя
