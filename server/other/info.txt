@@ -17,6 +17,7 @@ npm install uuid - генерация рандомных сторк
 npm install --save-dev @types/uuid
 npm install nodemailer - работа с почтой
 npm install --save-dev @types/nodemailer
+npm install express-validator - валидация
 
 
 tsconfig.json 

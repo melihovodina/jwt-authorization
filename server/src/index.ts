@@ -3,6 +3,7 @@ import cors from "cors"; // Библиотека для обеспечения C
 import cookieParser from "cookie-parser"; // Библиотека для разбора куки
 import mongoose from "mongoose"; // Библиотека для работы с MongoDB
 import router from "./router/index"; // Импорт роутера
+import errorMiddleware from "./middlewares/errorMiddleware";
 import { config } from "dotenv"; // Библиотека для работы с переменными окружения
 config({ path: "./other/.env" }); // Загрузка переменных окружения из файла .env
 
@@ -15,6 +16,7 @@ app.use(express.json()); // Разбор JSON-запросов
 app.use(cookieParser()); // Разбор куки
 app.use(cors()); // Обеспечение CORS
 app.use('/api', router); // Использование роутера для путей, начинающихся с '/api'
+app.use(errorMiddleware); //обработка ошибок (обязательно подключать последним)
 
 // Функция для запуска приложения
 const startApp = async () => {

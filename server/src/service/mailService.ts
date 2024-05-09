@@ -2,10 +2,10 @@ import nodemailer from "nodemailer";
 import { config } from "dotenv"; // Библиотека для работы с переменными окружения
 config({ path: "./other/.env" }); // Загрузка переменных окружения из файла .env
 
-const SMTP_HOST = process.env.SMTP_HOST || "smpt host is not working";
+const SMTP_HOST = process.env.SMTP_HOST || "smtp.gmail.com";
 const SMTP_PORT = process.env.SMTP_PORT || 587;
 const SMTP_USER = process.env.SMTP_USER || "smpt user is not working";
-const SMTP_PASSWORD = process.env.SMTP_PASSWORD || "smtp password is not working";
+const SMTP_PASSWORD = process.env.SMTP_PASSWORD || 3145;
 const SITE_URL = process.env.SITE_URL || "site url is not working";
 
 class MailService {
